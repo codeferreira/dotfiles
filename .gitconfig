@@ -1,0 +1,48 @@
+[user]
+	name = José Ferreira
+	email = dev.josejunior@gmail.com
+	signingkey = A1C5458799C4D5E3
+	; signingkey = C92226BAB70CB1C8
+[color]
+	branch = auto
+	diff = auto
+	interactive = auto
+	pager = true
+	status = auto
+	ui = true
+[color "status"]
+	added = green
+	changed = yellow
+	untracked = red
+[core]
+	autocrlf = input
+	pager = less -FRSX
+	excludesfile = /Users/joseferreira/.gitignore
+[alias]
+	ci = commit
+  co = checkout
+  cm = checkout main
+  cb = checkout -b
+  st = status -sb
+  sf = show --name-only
+  lg = log --pretty=format:'%Cred%h%Creset %C(bold)%cr%Creset %Cgreen<%an>%Creset %s' --max-count=30
+  incoming = !(git fetch --quiet && git log --pretty=format:'%C(yellow)%h %C(white)- %C(red)%an %C(white)- %C(cyan)%d%Creset %s %C(white)- %ar%Creset' ..@{u})
+  outgoing = !(git fetch --quiet && git log --pretty=format:'%C(yellow)%h %C(white)- %C(red)%an %C(white)- %C(cyan)%d%Creset %s %C(white)- %ar%Creset' @{u}..)
+  unstage = reset HEAD --
+  undo = checkout --
+  rollback = reset --soft HEAD~1
+  wipe = reset --hard HEAD
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[commit]
+	gpgsign = true
+[gpg]
+	form = ssh
+	program = gpg
+[pull]
+	rebase = true
+[init]
+	defaultBranch = main
