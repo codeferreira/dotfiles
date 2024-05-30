@@ -1,9 +1,13 @@
 
-zautoload -U colors && colors
 PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[magenta]%}%(4~|.../%3~|%~)%{$fg[red]%}]%{$reset_color%}$%b "
 
 alias config='/usr/bin/git --git-dir=/Users/joseferreira/dotfiles/.git --work-tree=/Users/joseferreira/dotfiles'
-alias ls="exa"
+alias ld="eza -lD"
+alias lf="eza -lf --color=always | rg -v /"
+alias lh="eza -dl .* --group-directories-first"
+alias ll="eza -al --group-directories-first"
+alias ls="eza -alf --color=always --sort=size | rg -v /"
+alias lt="eza -al --sort=modified"
 alias cat="bat"
 alias vi="nvim"
 alias v="nvim ."
@@ -19,18 +23,18 @@ alias dl="docker ps -l -q"
 alias dx="docker exec -it"
 
 # Dirs
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-alias .....="cd ../../../.."
-alias ......="cd ../../../../.."
+alias ..="z .."
+alias ...="z ../.."
+alias ....="z ../../.."
+alias .....="z ../../../.."
+alias ......="z ../../../../.."
 
 if [[ -f "/opt/homebrew/bin/brew" ]] then
   # If you're using macOS, you'll want this enabled
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
-ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+ZINIT_HOME="$HOME/.local/share/zinit/zinit.git"
 ### Added by Zinit's installer
 if [[ ! -f ZINIT_HOME ]]; then
     print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
@@ -48,7 +52,6 @@ zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 zinit light Aloxaf/fzf-tab
-zinit load  agkozak/zsh-z
 
 zinit snippet OMZP::git
 zinit snippet OMZP::sudo
@@ -62,6 +65,11 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
+
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt appendhistory
 
 eval $(thefuck --alias)
 
@@ -87,3 +95,4 @@ case ":$PATH:" in
 esac
 
 [ -s "/Users/joseferreira/.bun/_bun" ] && source "/Users/joseferreira/.bun/_bun"
+eval "$(zoxide init  --cmd cd zsh)"
