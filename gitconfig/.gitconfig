@@ -1,8 +1,7 @@
 [user]
 	name = José Ferreira
 	email = dev.josejunior@gmail.com
-	signingkey = A1C5458799C4D5E3
-	; signingkey = C92226BAB70CB1C8
+	signingkey =E97AB6F785584842
 [color]
 	branch = auto
 	diff = auto

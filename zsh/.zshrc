@@ -40,6 +40,24 @@ if [[ -f "/opt/homebrew/bin/brew" ]]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
+eval $(thefuck --alias)
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
+
+# Environment Variables
+export LANG=en_US.UTF-8
+export EDITOR=/opt/homebrew/bin/nvim
+export PATH="$HOME/.local/bin:$PATH"
+export GOPATH=$(asdf where golang)/packages
+export GOROOT=$(asdf where golang)/go
+export PATH="${PATH}:$(go env GOPATH)/bin"
+export PNPM_HOME="$HOME/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+
+eval "$(zoxide init --cmd cd zsh)"
+
 # Zinit Initialization
 ZINIT_HOME="$HOME/.local/share/zinit/zinit.git"
 if [[ ! -f $ZINIT_HOME ]]; then
@@ -54,10 +72,10 @@ source "${ZINIT_HOME}/zinit.zsh"
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
 # Zinit Plugins
+zinit light Aloxaf/fzf-tab
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
-zinit light Aloxaf/fzf-tab
 
 # OMZP Snippets
 zinit snippet OMZP::git
@@ -81,33 +99,4 @@ SAVEHIST=10000
 setopt appendhistory
 
 # Shell Integrations
-eval $(thefuck --alias)
 eval "$(starship init zsh)"
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
-source ~/aws_login.zsh
-
-# Environment Variables
-export LANG=en_US.UTF-8
-export EDITOR=/opt/homebrew/bin/nvim
-export ANDROID_HOME="$HOME/Library/Android/sdk/"
-
-export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
-export PATH="$ANDROID_HOME/tools:$PATH"
-export PATH="$ANDROID_HOME/platform-tools:$PATH"
-export PATH="$HOME/.local/bin:$PATH"
-export PATH="$BUN_INSTALL/bin:$PATH"
-export GOPATH=$(asdf where golang)/packages
-export GOROOT=$(asdf where golang)/go
-export PATH="${PATH}:$(go env GOPATH)/bin"
-# pnpm PATH
-export PNPM_HOME="$HOME/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-
-[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
-eval "$(zoxide init --cmd cd zsh)"
-
-
-PATH=~/.console-ninja/.bin:$PATH
