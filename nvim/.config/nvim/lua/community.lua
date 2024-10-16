@@ -1,0 +1,17 @@
+return {
+  "AstroNvim/astrocommunity",
+  { import = "astrocommunity.pack.lua" },
+  { import = "astrocommunity.test.vim-test" },
+  { import = "astrocommunity.search.nvim-spectre" },
+  { import = "astrocommunity.fuzzy-finder.telescope-zoxide" },
+  { import = "astrocommunity.pack.typescript" },
+  { import = "astrocommunity.pack.tailwindcss" },
+  { import = "astrocommunity.pack.json" },
+  { import = "astrocommunity.pack.go" },
+  { import = "astrocommunity.pack.yaml" },
+  { import = "astrocommunity.pack.toml" },
+  { import = "astrocommunity.pack.bash" },
+  { import = "astrocommunity.pack.rust" },
+  { import = "astrocommunity.pack.docker" },
+  { import = "astrocommunity.pack.astro" },
+}
