@@ -1,5 +1,7 @@
-
 "$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = true
+
 format = """
 $username \
 $directory \
@@ -17,9 +19,12 @@ $nodejs \
 $nim \
 $rust \
 $scala \
-$python\n  \
-$time\n  \
-[󱞪](fg:iris)
+$python \
+$line_break$character
+"""
+
+right_format = """
+$time
 """
 
 palette = "rose-pine"
@@ -38,6 +43,11 @@ format = "[](fg:overlay)[ $path ]($style)[](fg:overlay)"
 style = "bg:overlay fg:pine"
 truncation_length = 3
 truncation_symbol = "…/"
+
+[character]
+success_symbol = '[󱞪](fg:iris)'
+error_symbol = '[󱞪](fg:love)'
+
 
 [directory.substitutions]
 Documents = "󰈙"
