@@ -2,9 +2,9 @@
 
 # open terminal
 cmd + alt - return : open -n -a "WezTerm"
-
 # open chrome 
 cmd + shift - return : open -n -a "Arc" 
+
 
 # change window focus within space
 alt - j : yabai -m window --focus south

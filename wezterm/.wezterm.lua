@@ -1,5 +1,6 @@
 -- Pull in the wezterm API
 local wezterm = require("wezterm")
+local theme = require("lua/rose-pine").main
 
 -- This table will hold the configuration.
 local config = {}
@@ -41,7 +42,8 @@ config.font = wezterm.font({
 })
 config.font_size = 14.0
 config.line_height = 1.6
-config.color_scheme = "Rose Pine"
+config.colors = theme.colors()
+config.window_frame = theme.window_frame()
 config.enable_tab_bar = false
 config.macos_window_background_blur = 30
 config.window_background_opacity = 1.0

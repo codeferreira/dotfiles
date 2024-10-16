@@ -23,10 +23,6 @@ $python \
 $line_break$character
 """
 
-right_format = """
-$time
-"""
-
 palette = "rose-pine"
 
 [palettes.rose-pine]
