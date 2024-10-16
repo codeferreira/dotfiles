@@ -32,6 +32,9 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias ......="cd ../../../../.."
 
+alias ssh="TERM=xterm-256color ssh"
+alias yz="yazi"
+
 # Homebrew Initialization
 if [[ -f "/opt/homebrew/bin/brew" ]]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
