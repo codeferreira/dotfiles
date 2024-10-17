@@ -119,3 +119,4 @@ ctrl + alt - x : yabai -m space --layout float
 # move focused window to occupy the left two thirds of the screen. 
 ctrl + alt - t : yabai -m window --grid 1:3:0:0:2:1
 
+
