@@ -2,17 +2,17 @@
 
 # Color Palette
 # Tokyonight Night
-BLACK=0xff24283b
-WHITE=0xffa9b1d6
-MAGENTA=0xffbb9af7
-BLUE=0xff7aa2f7
-CYAN=0xff7dcfff
-GREEN=0xff9ece6a
-YELLOW=0xffe0af68
-ORANGE=0xffff9e64
-RED=0xfff7768e
-BAR_COLOR=0xff1a1b26
-COMMENT=0xff565f89
+BLACK=0xff191724     # Base
+WHITE=0xffe0def4     # Text
+MAGENTA=0xffc4a7e7   # Iris
+BLUE=0xff31748f      # Pine
+CYAN=0xff9ccfd8      # Foam
+GREEN=0xff6e6a86     # Muted
+YELLOW=0xfff6c177    # Gold
+ORANGE=0xffebbcba    # Rose
+RED=0xffeb6f92       # Love
+BAR_COLOR=0xff1f1d2e # Surface
+COMMENT=0xff908caa   # Subtle
 
 # Tokyonight Day
 # BLACK=0xffe9e9ed
@@ -35,7 +35,7 @@ LABEL_COLOR=$WHITE # Color of all labels
 ITEM_DIR="$HOME/.config/sketchybar/items"
 PLUGIN_DIR="$HOME/.config/sketchybar/plugins"
 
-FONT="MesloLGS NF"
+FONT="FiraCode Nerd Font Mono"
 
 PADDINGS=3
 
@@ -47,4 +47,4 @@ POPUP_BORDER_COLOR=$COMMENT
 CORNER_RADIUS=15
 BORDER_WIDTH=2
 
-SHADOW=on
+SHADOW=off
