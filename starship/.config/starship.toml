@@ -1,7 +1,5 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
-add_newline = true
-
 format = """
 $username \
 $directory \
@@ -63,7 +61,7 @@ symbol = ""
 [git_status]
 style = "bg:overlay fg:love"
 format = '[](fg:overlay)[$all_status$ahead_behind]($style)[](fg:overlay)'
-disabled = true
+disabled = false
 
 [time]
 disabled = false

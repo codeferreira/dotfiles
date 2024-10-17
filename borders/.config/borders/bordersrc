@@ -1,12 +1,12 @@
 #!/bin/bash
 
 options=(
-	style=round               # Keep the rounded border style
-	width=6.0                 # Maintain the border width
-	hidpi=off                 # No HiDPI scaling
-	active_color=0xc4a7e7     # Active: Iris color, gives a pleasant purple hue
-	inactive_color=0x9ccfd8   # Inactive: Foam, a soft blue
-	background_color=0x26233a # Background: Overlay color from Rosepine
+	style=round
+	width=6.0
+	hidpi=off
+	active_color=0xc0c4a7e7
+	inactive_color=0xc02c2e34
+	background_color=0x302c2e34
 )
 
 borders "${options[@]}"
