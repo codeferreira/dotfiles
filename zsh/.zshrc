@@ -51,6 +51,10 @@ export GOPATH=$(asdf where golang)/packages
 export GOROOT=$(asdf where golang)/go
 export PATH="${PATH}:$(go env GOPATH)/bin"
 export PNPM_HOME="$HOME/Library/pnpm"
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;

@@ -1,25 +1,25 @@
 "$schema" = 'https://starship.rs/config-schema.json'
+add_newline = true
 
-format = """
-$username \
-$directory \
-$git_branch \
-$git_status \
-$fill \
-$c \
-$elixir \
-$elm \
-$golang \
-$haskell \
-$java \
-$julia \
-$nodejs \
-$nim \
-$rust \
-$scala \
-$python \
-$line_break$character
-"""
+# format = """
+# $username \
+# $directory \
+# $git_branch \
+# $git_status \
+# $c \
+# $elixir \
+# $elm \
+# $golang \
+# $haskell \
+# $java \
+# $julia \
+# $nodejs \
+# $nim \
+# $rust \
+# $scala \
+# $python \
+# $line_break$character
+# """
 
 palette = "rose-pine"
 
@@ -42,16 +42,11 @@ truncation_symbol = "…/"
 success_symbol = '[󱞪](fg:iris)'
 error_symbol = '[󱞪](fg:love)'
 
-
 [directory.substitutions]
 Documents = "󰈙"
 Downloads = " "
 Music = " "
 Pictures = " "
-
-[fill]
-style = "fg:overlay"
-symbol = " "
 
 [git_branch]
 format = "[](fg:overlay)[ $symbol $branch ]($style)[](fg:overlay)"
@@ -64,7 +59,7 @@ format = '[](fg:overlay)[$all_status$ahead_behind]($style)[](fg:overlay)'
 disabled = false
 
 [time]
-disabled = false
+disabled = true
 format = "[](fg:overlay)[ $time 󰴈 ]($style)[](fg:overlay)"
 style = "bg:overlay fg:rose"
 time_format = "%I:%M%P"
