@@ -1,8 +1,3 @@
-# Prompt
-PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[magenta]%}%(4~|.../%3~|%~)%{$fg[red]%}]%{$reset_color%}$%b "
-
-# Aliases
-alias config='/usr/bin/git --git-dir=$HOME/dotfiles/.git --work-tree=$HOME/dotfiles'
 alias cat="bat"
 alias vi="nvim"
 alias v="nvim ."
@@ -34,13 +29,13 @@ alias ......="cd ../../../../.."
 
 alias ssh="TERM=xterm-256color ssh"
 alias yz="yazi"
+alias ccm="git diff | cody chat -m 'Write a commit message for this diff' -"
 
 # Homebrew Initialization
 if [[ -f "/opt/homebrew/bin/brew" ]]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
-eval $(thefuck --alias)
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
 
 # Environment Variables
@@ -55,6 +50,7 @@ export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
+
 
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
@@ -78,7 +74,6 @@ source "${ZINIT_HOME}/zinit.zsh"
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
 # Zinit Plugins
-# zinit light Aloxaf/fzf-tab
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
@@ -89,34 +84,16 @@ zinit snippet OMZP::sudo
 zinit snippet OMZP::aws
 zinit snippet OMZP::command-not-found
 
-# disable sort when completing `git checkout`
 zstyle ':completion:*:git-checkout:*' sort false
-# set descriptions format to enable group support
-# NOTE: don't use escape sequences (like '%F{red}%d%f') here, fzf-tab will ignore them
 zstyle ':completion:*:descriptions' format '[%d]'
-# set list-colors to enable filename colorizing
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-# force zsh not to show completion menu, which allows fzf-tab to capture the unambiguous prefix
 zstyle ':completion:*' menu no
-# # preview directory's content with eza when completing cd
-# zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
-# # custom fzf flags
-# # NOTE: fzf-tab does not follow FZF_DEFAULT_OPTS by default
-# zstyle ':fzf-tab:*' fzf-flags --color=fg:1,fg+:2 --bind=tab:accept
-# # To make fzf-tab follow FZF_DEFAULT_OPTS.
-# # NOTE: This may lead to unexpected behavior since some flags break this plugin. See Aloxaf/fzf-tab#455.
-# zstyle ':fzf-tab:*' use-fzf-default-opts yes
-# # switch group using `<` and `>`
-# zstyle ':fzf-tab:*' switch-group '<' '>'
-# zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 
 zinit cdreplay -q
 
-# History Configuration
 HISTFILE=~/.zsh_history
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=5000
+SAVEHIST=5000
 setopt appendhistory
 
-# Shell Integrations
 eval "$(starship init zsh)"
