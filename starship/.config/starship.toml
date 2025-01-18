@@ -1,147 +1,49 @@
+# Get editor completions based on the config schema
 "$schema" = 'https://starship.rs/config-schema.json'
-add_newline = true
 
-# format = """
-# $username \
-# $directory \
-# $git_branch \
-# $git_status \
-# $c \
-# $elixir \
-# $elm \
-# $golang \
-# $haskell \
-# $java \
-# $julia \
-# $nodejs \
-# $nim \
-# $rust \
-# $scala \
-# $python \
-# $line_break$character
-# """
+# Sets user-defined palette
+# Palettes must be defined _after_ this line
+palette = "catppuccin_mocha"
 
-palette = "rose-pine"
-
-[palettes.rose-pine]
-overlay = '#26233a'
-love = '#eb6f92'
-gold = '#f6c177'
-rose = '#ebbcba'
-pine = '#31748f'
-foam = '#9ccfd8'
-iris = '#c4a7e7'
-
-[directory]
-format = "[](fg:overlay)[ $path ]($style)[](fg:overlay)"
-style = "bg:overlay fg:pine"
-truncation_length = 3
-truncation_symbol = "…/"
-
+# Starship modules
 [character]
-success_symbol = '[󱞪](fg:iris)'
-error_symbol = '[󱞪](fg:love)'
-
-[directory.substitutions]
-Documents = "󰈙"
-Downloads = " "
-Music = " "
-Pictures = " "
+# Note the use of Catppuccin color 'peach'
+success_symbol = "[[󰄛](green) ❯](peach)"
+error_symbol = "[[󰄛](red) ❯](peach)"
+vimcmd_symbol = "[󰄛 ❮](subtext1)" # For use with zsh-vi-mode
 
 [git_branch]
-format = "[](fg:overlay)[ $symbol $branch ]($style)[](fg:overlay)"
-style = "bg:overlay fg:foam"
-symbol = ""
+style = "bold mauve"
 
-[git_status]
-style = "bg:overlay fg:love"
-format = '[](fg:overlay)[$all_status$ahead_behind]($style)[](fg:overlay)'
-disabled = false
+[directory]
+truncation_length = 4
+style = "bold lavender"
 
-[time]
-disabled = true
-format = "[](fg:overlay)[ $time 󰴈 ]($style)[](fg:overlay)"
-style = "bg:overlay fg:rose"
-time_format = "%I:%M%P"
-use_12hr = true
+[palettes.catppuccin_mocha]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"
 
-[username]
-disabled = false
-format = "[](fg:overlay)[ 󰧱 $user ]($style)[](fg:overlay)"
-show_always = true
-style_root = "bg:overlay fg:iris"
-style_user = "bg:overlay fg:iris"
-
-# Languages
-
-[c]
-style = "bg:overlay fg:pine"
-format = "[](fg:overlay)[$symbol$version]($style)[](fg:overlay) "
-disabled = false
-symbol = " "
-
-[elixir]
-style = "bg:overlay fg:pine"
-format = "[](fg:overlay)[$symbol$version]($style)[](fg:overlay) "
-disabled = false
-symbol = " "
-
-[elm]
-style = "bg:overlay fg:pine"
-format = "[](fg:overlay)[$symbol$version]($style)[](fg:overlay) "
-disabled = false
-symbol = " "
-
-[golang]
-style = "bg:overlay fg:pine"
-format = "[](fg:overlay)[$symbol$version]($style)[](fg:overlay) "
-disabled = false
-symbol = " "
-
-[haskell]
-style = "bg:overlay fg:pine"
-format = "[](fg:overlay)[$symbol$version]($style)[](fg:overlay) "
-disabled = false
-symbol = " "
-
-[java]
-style = "bg:overlay fg:pine"
-format = "[](fg:overlay)[$symbol$version]($style)[](fg:overlay) "
-disabled = false
-symbol = " "
-
-[julia]
-style = "bg:overlay fg:pine"
-format = "[](fg:overlay)[$symbol$version]($style)[](fg:overlay) "
-disabled = false
-symbol = " "
-
-[nodejs]
-style = "bg:overlay fg:pine"
-format = "[](fg:overlay)[$symbol$version]($style)[](fg:overlay) "
-disabled = false
-symbol = "󰎙 "
-
-[nim]
-style = "bg:overlay fg:pine"
-format = "[](fg:overlay)[$symbol$version]($style)[](fg:overlay) "
-disabled = false
-symbol = "󰆥 "
-
-[rust]
-style = "bg:overlay fg:pine"
-format = "[](fg:overlay)[$symbol$version]($style)[](fg:overlay) "
-disabled = false
-symbol = ""
-
-[scala]
-style = "bg:overlay fg:pine"
-format = "[](fg:overlay)[$symbol$version]($style)[](fg:overlay) "
-disabled = false
-symbol = " "
-
-[python]
-style = "bg:overlay fg:pine"
-format = "[](fg:overlay)[$symbol$version]($style)[](fg:overlay) "
-disabled = false
-symbol = ' '

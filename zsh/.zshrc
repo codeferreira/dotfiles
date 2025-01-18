@@ -1,3 +1,5 @@
+eval "$(starship init zsh)"
+
 alias cat="bat"
 alias vi="nvim"
 alias v="nvim ."
@@ -40,7 +42,8 @@ fi
 
 # Environment Variables
 export LANG=en_US.UTF-8
-export EDITOR=/opt/homebrew/bin/nvim
+export EDITOR="nvim"
+export SUDO_EDITOR="$EDITOR"
 export PATH="$HOME/.local/bin:$PATH"
 export GOPATH=$(asdf where golang)/packages
 export GOROOT=$(asdf where golang)/go
@@ -58,17 +61,9 @@ case ":$PATH:" in
 esac
 
 eval "$(zoxide init --cmd cd zsh)"
-source <(fzf --zsh)
 
 # Zinit Initialization
 ZINIT_HOME="$HOME/.local/share/zinit/zinit.git"
-if [[ ! -f $ZINIT_HOME ]]; then
-    print -P "%F{33} %F{220}Installing %F{33} ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
-    mkdir -p "$HOME/.local/share/zinit" && chmod g-rwX "$HOME/.local/share/zinit"
-    git clone https://github.com/zdharma-continuum/zinit "$ZINIT_HOME" && \
-        print -P "%F{33} %F{34}Installation successful.%f%b" || \
-        print -P "%F{160} The clone has failed.%f%b"
-fi
 
 source "${ZINIT_HOME}/zinit.zsh"
 (( ${+_comps} )) && _comps[zinit]=_zinit
@@ -96,4 +91,5 @@ HISTSIZE=5000
 SAVEHIST=5000
 setopt appendhistory
 
-eval "$(starship init zsh)"
+source <(fzf --zsh)
+
