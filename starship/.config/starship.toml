@@ -1,23 +1,41 @@
 # Get editor completions based on the config schema
 "$schema" = 'https://starship.rs/config-schema.json'
 
-# Sets user-defined palette
-# Palettes must be defined _after_ this line
+add_newline = true
+# A minimal left prompt
 palette = "catppuccin_mocha"
+# move the rest of the prompt to the right
+command_timeout = 1000
 
-# Starship modules
 [character]
-# Note the use of Catppuccin color 'peach'
-success_symbol = "[[󰄛](green) ❯](peach)"
-error_symbol = "[[󰄛](red) ❯](peach)"
-vimcmd_symbol = "[󰄛 ❮](subtext1)" # For use with zsh-vi-mode
+success_symbol = '[➜](bold green)'
+
+[directory.substitutions]
+'~/tests/starship-custom' = 'work-project'
 
 [git_branch]
-style = "bold mauve"
+format = '[$symbol$branch(:$remote_branch)]($style)'
 
-[directory]
-truncation_length = 4
-style = "bold lavender"
+[aws]
+format = '[$symbol(profile: "$profile" )(\(region: $region\) )]($style)'
+disabled = false
+style = 'bold blue'
+symbol = " "
+
+[golang]
+format = '[ ](bold cyan)'
+
+[kubernetes]
+symbol = '☸ '
+disabled = true
+detect_files = ['Dockerfile']
+format = '[$symbol$context( \($namespace\))]($style) '
+contexts = [
+  { context_pattern = "arn:aws:eks:us-west-2:577926974532:cluster/zd-pvc-omer", style = "green", context_alias = "omerxx", symbol = " " },
+]
+
+[docker_context]
+disabled = true
 
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"
@@ -46,4 +64,3 @@ surface0 = "#313244"
 base = "#1e1e2e"
 mantle = "#181825"
 crust = "#11111b"
-
