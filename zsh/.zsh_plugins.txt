@@ -1,0 +1,4 @@
+Aloxaf/fzf-tab
+jeffreytse/zsh-vi-mode
+zsh-users/zsh-autosuggestions
+zsh-users/zsh-syntax-highlighting
