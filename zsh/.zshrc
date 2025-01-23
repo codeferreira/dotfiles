@@ -1,3 +1,4 @@
+export ASDF_GOLANG_MOD_VERSION_ENABLED=true
 eval "$(starship init zsh)"
 
 alias cat="bat"
@@ -48,21 +49,12 @@ export PATH="$HOME/.local/bin:$PATH"
 export GOPATH=$(asdf where golang)/packages
 export GOROOT=$(asdf where golang)/go
 export PATH="${PATH}:$(go env GOPATH)/bin"
-export PNPM_HOME="$HOME/Library/pnpm"
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
-export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 autoload -U compinit; compinit
 
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source <(fzf --zsh)
 
 source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
 
@@ -94,10 +86,26 @@ HISTSIZE=5000
 SAVEHIST=5000
 setopt appendhistory
 
-source <(fzf --zsh)
-
 
 . "$HOME/.atuin/bin/env"
 
 eval "$(atuin init zsh)"
 eval "$(zoxide init --cmd cd zsh)"
+eval 
+            fuck () {
+                TF_PYTHONIOENCODING=$PYTHONIOENCODING;
+                export TF_SHELL=zsh;
+                export TF_ALIAS=fuck;
+                TF_SHELL_ALIASES=$(alias);
+                export TF_SHELL_ALIASES;
+                TF_HISTORY="$(fc -ln -10)";
+                export TF_HISTORY;
+                export PYTHONIOENCODING=utf-8;
+                TF_CMD=$(
+                    thefuck THEFUCK_ARGUMENT_PLACEHOLDER $@
+                ) && eval $TF_CMD;
+                unset TF_HISTORY;
+                export PYTHONIOENCODING=$TF_PYTHONIOENCODING;
+                test -n "$TF_CMD" && print -s $TF_CMD
+            }
+        
