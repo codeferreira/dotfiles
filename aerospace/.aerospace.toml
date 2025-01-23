@@ -29,7 +29,7 @@ default-root-container-layout = 'tiles'
 # Possible values: horizontal|vertical|auto
 # 'auto' means: wide monitor (anything wider than high) gets horizontal orientation,
 #               tall monitor (anything higher than wide) gets vertical orientation
-default-root-container-orientation = 'horizontal'
+default-root-container-orientation = 'auto'
 
 # Mouse follows focus when focused monitor changes
 # Drop it from your config, if you don't like this behavior
@@ -41,7 +41,7 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 # You can effectively turn off macOS "Hide application" (cmd-h) feature by toggling this flag
 # Useful if you don't use this macOS feature, but accidentally hit cmd-h or cmd-alt-h key
 # Also see: https://nikitabobko.github.io/AeroSpace/goodies#disable-hide-app
-automatically-unhide-macos-hidden-apps = true
+automatically-unhide-macos-hidden-apps = false
 
 # Possible values: (qwerty|dvorak)
 # See https://nikitabobko.github.io/AeroSpace/guide#key-mapping
@@ -100,13 +100,12 @@ ctrl-6 = 'workspace 6'
 ctrl-7 = 'workspace 7'
 ctrl-8 = 'workspace 8'
 ctrl-9 = 'workspace 9'
-ctrl-0 = 'workspace 10' # In your config, you can drop workspace bindings that you don't need
 
 
-alt-s = 'focus-monitor --wrap-around left'
-alt-g = 'focus-monitor --wrap-around right'
-alt-shift-s = 'move-node-to-monitor --focus-follows-window --wrap-around left'
-alt-shift-g = 'move-node-to-monitor --focus-follows-window --wrap-around right'
+alt-s = 'focus-monitor left'
+alt-g = 'focus-monitor right'
+alt-shift-s = 'move-node-to-monitor --focus-follows-window left'
+alt-shift-g = 'move-node-to-monitor --focus-follows-window right'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
 alt-shift-1 = 'move-node-to-workspace --focus-follows-window 1'
@@ -133,6 +132,7 @@ alt-shift-m = 'fullscreen'
 
 alt-shift-t = 'exec-and-forget open -a /Applications/Ghostty.app'
 alt-shift-b = 'exec-and-forget open -a /Applications/Arc.app'
+
 
 alt-shift-c = 'reload-config'
 
@@ -166,17 +166,26 @@ alt-shift-j = ['join-with down', 'mode main']
 alt-shift-k = ['join-with up', 'mode main']
 alt-shift-l = ['join-with right', 'mode main']
 
-down = 'volume down'
-up = 'volume up'
-shift-down = ['volume set 0', 'mode main']
 
 [workspace-to-monitor-force-assignment]
-1 = 'GIGABYTE G24F'
-2 = 'GIGABYTE G24F'
-3 = 'GIGABYTE G24F'
-4 = 'Built-in Retina Display'
-5 = 'Built-in Retina Display'
-6 = 'Built-in Retina Display'
-7 = 'LG HDR WFHD'
-8 = 'LG HDR WFHD'
-9 = 'LG HDR WFHD'
+1 = 2
+2 = 2
+3 = 2
+4 = 3
+5 = 3
+6 = 3
+7 = 1
+8 = 1
+9 = 1
+
+[[on-window-detected]]
+if.app-id = 'com.mitchellh.ghostty'
+run = "move-node-to-workspace 1"
+
+[[on-window-detected]]
+if.app-id = 'app.zen-browser.zen'
+run = 'move-node-to-workspace 4'
+
+[[on-window-detected]]
+if.app-id = 'com.tinyspeck.slackmacgap'
+run = 'move-node-to-workspace 7'
