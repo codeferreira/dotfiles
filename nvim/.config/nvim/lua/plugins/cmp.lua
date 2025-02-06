@@ -7,7 +7,7 @@ return {
       { name = "buffer" },
       { name = "path" },
       { name = "luasnip" },
-      { name = "supermaven" },
+      -- { name = "supermaven" },
     }
   end,
 }
