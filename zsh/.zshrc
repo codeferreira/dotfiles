@@ -1,4 +1,3 @@
-export ASDF_GOLANG_MOD_VERSION_ENABLED=true
 eval "$(starship init zsh)"
 
 alias cat="bat"
@@ -39,18 +38,19 @@ if [[ -f "/opt/homebrew/bin/brew" ]]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
-
+# . /opt/homebrew/opt/asdf/libexec/asdf.sh
+# 
 # Environment Variables
 export LANG=en_US.UTF-8
 export EDITOR="nvim"
 export SUDO_EDITOR="$EDITOR"
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
-export GOPATH=$(asdf where golang)/packages
-export GOROOT=$(asdf where golang)/go
-export PATH="${PATH}:$(go env GOPATH)/bin"
 
-autoload -U compinit; compinit
+# append completions to fpath
+fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
+# initialise completions with ZSH's compinit
+autoload -Uz compinit && compinit
 
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -66,7 +66,7 @@ zstyle ':completion:*:git-checkout:*' sort false
 # NOTE: don't use escape sequences (like '%F{red}%d%f') here, fzf-tab will ignore them
 zstyle ':completion:*:descriptions' format '[%d]'
 # set list-colors to enable filename colorizing
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 # force zsh not to show completion menu, which allows fzf-tab to capture the unambiguous prefix
 zstyle ':completion:*' menu no
 # preview directory's content with eza when completing cd
@@ -104,9 +104,10 @@ eval
                 export PYTHONIOENCODING=utf-8;
                 TF_CMD=$(
                     thefuck THEFUCK_ARGUMENT_PLACEHOLDER $@
-                ) && eval $TF_CMD;
+                ) && eval "$TF_CMD";
                 unset TF_HISTORY;
                 export PYTHONIOENCODING=$TF_PYTHONIOENCODING;
-                test -n "$TF_CMD" && print -s $TF_CMD
+                test -n "$TF_CMD" && print -s "$TF_CMD"
             }
         
+
