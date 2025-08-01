@@ -38,6 +38,7 @@ if [[ -f "/opt/homebrew/bin/brew" ]]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
+GOPATH=$HOME/.asdf/plugins/golang
 
 
 # Environment Variables
@@ -46,13 +47,13 @@ export EDITOR="nvim"
 export SUDO_EDITOR="$EDITOR"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+export PATH="$PATH:/usr/local/go/bin:$GOPATH/bin"
 export PNPM_HOME="$HOME/Library/pnpm"
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
-. ~/.asdf/plugins/golang/set-env.zsh
 
 fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
 
@@ -98,9 +99,9 @@ HISTSIZE=5000
 SAVEHIST=5000
 setopt appendhistory
 
-
-
 . "$HOME/.atuin/bin/env"
+. ~/.asdf/plugins/golang/set-env.zsh
+
 
 eval "$(atuin init zsh)"
 eval "$(zoxide init --cmd cd zsh)"
