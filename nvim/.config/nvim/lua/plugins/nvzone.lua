@@ -14,4 +14,5 @@ return {
   },
   { "nvzone/showkeys", cmd = "ShowkeysToggle" },
   { "nvzone/typr", cmd = "TyprToggle" },
+  { "nvzone/minty" },
 }

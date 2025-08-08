@@ -40,3 +40,5 @@ font-family-bold-italic = CaskaydiaCove Nerd Font
 window-title-font-family = CaskaydiaCove Nerd Font
 mouse-hide-while-typing = true
 macos-titlebar-style = hidden
+background-opacity = 0.96
+gtk-titlebar = false
