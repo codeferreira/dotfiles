@@ -128,3 +128,14 @@ eval
 alias claude="/Users/jferreguetti/.claude/local/claude"
 eval "$(zoxide init --cmd cd zsh)"
 
+
+# bun completions
+[ -s "/Users/ferreiracode/.bun/_bun" ] && source "/Users/ferreiracode/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
