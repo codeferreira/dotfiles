@@ -44,9 +44,20 @@ fi
 export LANG=en_US.UTF-8
 export EDITOR="nvim"
 export SUDO_EDITOR="$EDITOR"
-export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
-
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/installs:$PATH"
+export ANTHROPIC_BASE_URL="https://aiplatform.dev51.cbf.dev.paypalinc.com/cosmosai/llm/v1"
+export ANTHROPIC_AUTH_TOKEN=dc4da242dcc2b50f4f94a75862409e0383c757717174698ac7603d29b8cc1375
+#
+# # PayPal Certificate Configuration
+# export REQUESTS_CA_BUNDLE="$HOME/Desktop/combined-certs.pem"
+# export SSL_CERT_FILE="$HOME/Desktop/combined-certs.pem"
+# export CURL_CA_BUNDLE="$HOME/Desktop/combined-certs.pem"
+#
+# # For Node.js
+# export NODE_EXTRA_CA_CERTS="$HOME/Downloads/paypal-cert-bundle.pem"
+#
 # append completions to fpath
 fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
 # initialise completions with ZSH's compinit
@@ -83,7 +94,6 @@ zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 
 HISTFILE=~/.zsh_history
 HISTSIZE=5000
-SAVEHIST=5000
 setopt appendhistory
 
 
@@ -111,3 +121,6 @@ eval
             }
         
 
+
+
+alias claude="/Users/jferreguetti/.claude/local/claude"
