@@ -9,8 +9,10 @@ return {
   { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.recipes.ai" },
   { import = "astrocommunity.docker.lazydocker" },
+  { import = "astrocommunity.completion.copilot-lua-cmp" },
   { import = "astrocommunity.editing-support.copilotchat-nvim" },
   { import = "astrocommunity.editing-support.multicursors-nvim" },
+  { import = "astrocommunity.editing-support.todo-comments-nvim" },
   { import = "astrocommunity.git.git-blame-nvim" },
   { import = "astrocommunity.git.diffview-nvim" },
   { import = "astrocommunity.markdown-and-latex.peek-nvim" },
@@ -25,10 +27,9 @@ return {
   { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.pack.yaml" },
   { import = "astrocommunity.test.neotest" },
+  { import = "astrocommunity.test.nvim-coverage" },
   { import = "astrocommunity.motion.harpoon" },
   { import = "astrocommunity.diagnostics.trouble-nvim" },
   { import = "astrocommunity.utility.noice-nvim" },
   { import = "astrocommunity.programming-language-support.rest-nvim" },
-
-  -- import/override with your plugins folder
 }
