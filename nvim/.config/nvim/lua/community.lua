@@ -8,8 +8,6 @@ return {
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.recipes.ai" },
-  -- { import = "astrocommunity.recipes.heirline-mode-text-statusline" },
-  { import = "astrocommunity.docker.lazydocker" },
   { import = "astrocommunity.completion.copilot-lua-cmp" },
   { import = "astrocommunity.editing-support.copilotchat-nvim" },
   { import = "astrocommunity.editing-support.multicursors-nvim" },
@@ -28,9 +26,5 @@ return {
   { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.pack.yaml" },
   { import = "astrocommunity.test.neotest" },
-  { import = "astrocommunity.test.nvim-coverage" },
-  { import = "astrocommunity.motion.harpoon" },
   { import = "astrocommunity.diagnostics.trouble-nvim" },
-  { import = "astrocommunity.utility.noice-nvim" },
-  { import = "astrocommunity.programming-language-support.rest-nvim" },
 }

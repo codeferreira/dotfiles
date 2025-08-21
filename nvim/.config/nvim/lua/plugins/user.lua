@@ -1,2 +1,15 @@
 ---@type LazySpec
-return {}
+return {
+  {
+    "goolord/alpha-nvim",
+    enabled = false,
+  },
+  {
+    "akinsho/toggleterm.nvim",
+    enabled = false,
+  },
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    enabled = false,
+  },
+}
