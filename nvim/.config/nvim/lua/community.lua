@@ -8,6 +8,8 @@ return {
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.recipes.ai" },
+  { import = "astrocommunity.markdown-and-latex.glow-nvim" },
+  { import = "astrocommunity.markdown-and-latex.peek-nvim" },
   { import = "astrocommunity.completion.copilot-lua-cmp" },
   { import = "astrocommunity.editing-support.copilotchat-nvim" },
   { import = "astrocommunity.editing-support.multicursors-nvim" },
