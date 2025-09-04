@@ -1,6 +1,7 @@
 [user]
 	name = José Ferreguetti
 	email = jferreguetti@paypal.com 
+	; email = dev.josejunior@gmail.com
 	signingkey = 1A0E566B6D5D07A7
 [color]
 	branch = auto

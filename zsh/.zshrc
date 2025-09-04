@@ -101,7 +101,7 @@ setopt appendhistory
 . "$HOME/.atuin/bin/env"
 
 eval "$(atuin init zsh)"
-eval "$(zoxide init --cmd cd zsh)"
+ 
 eval 
             fuck () {
                 TF_PYTHONIOENCODING=$PYTHONIOENCODING;
@@ -124,3 +124,5 @@ eval
 
 
 alias claude="/Users/jferreguetti/.claude/local/claude"
+eval "$(zoxide init --cmd cd zsh)"
+
