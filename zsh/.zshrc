@@ -79,7 +79,7 @@ zstyle ':completion:*:git-checkout:*' sort false
 # NOTE: don't use escape sequences (like '%F{red}%d%f') here, fzf-tab will ignore them
 zstyle ':completion:*:descriptions' format '[%d]'
 # set list-colors to enable filename colorizing
-zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 # force zsh not to show completion menu, which allows fzf-tab to capture the unambiguous prefix
 zstyle ':completion:*' menu no
 # preview directory's content with eza when completing cd
@@ -96,6 +96,7 @@ zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 
 HISTFILE=~/.zsh_history
 HISTSIZE=5000
+SAVEHIST=5000
 setopt appendhistory
 
 . "$HOME/.atuin/bin/env"
@@ -103,29 +104,6 @@ setopt appendhistory
 
 
 eval "$(atuin init zsh)"
- 
-eval 
-            fuck () {
-                TF_PYTHONIOENCODING=$PYTHONIOENCODING;
-                export TF_SHELL=zsh;
-                export TF_ALIAS=fuck;
-                TF_SHELL_ALIASES=$(alias);
-                export TF_SHELL_ALIASES;
-                TF_HISTORY="$(fc -ln -10)";
-                export TF_HISTORY;
-                export PYTHONIOENCODING=utf-8;
-                TF_CMD=$(
-                    thefuck THEFUCK_ARGUMENT_PLACEHOLDER $@
-                ) && eval "$TF_CMD";
-                unset TF_HISTORY;
-                export PYTHONIOENCODING=$TF_PYTHONIOENCODING;
-                test -n "$TF_CMD" && print -s "$TF_CMD"
-            }
-        
-
-
-
-alias claude="/Users/jferreguetti/.claude/local/claude"
 eval "$(zoxide init --cmd cd zsh)"
 
 
@@ -136,6 +114,3 @@ eval "$(zoxide init --cmd cd zsh)"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"

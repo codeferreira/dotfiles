@@ -97,6 +97,9 @@ return {
         is_hidden_file = function(name, bufnr) return false end,
         is_always_hidden = function(name, bufnr) return false end,
       },
+      win_options = {
+        signcolumn = "yes:2",
+      },
       -- Better oil defaults
       skip_confirm_for_simple_edits = true,
       prompt_save_on_select_new_entry = false,
