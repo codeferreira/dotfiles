@@ -12,4 +12,5 @@ return {
     "nvim-neo-tree/neo-tree.nvim",
     enabled = false,
   },
+  { "vague-theme/vague.nvim" },
 }
