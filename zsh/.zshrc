@@ -38,30 +38,31 @@ if [[ -f "/opt/homebrew/bin/brew" ]]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
-# . /opt/homebrew/opt/asdf/libexec/asdf.sh
-# 
+
+
 # Environment Variables
 export LANG=en_US.UTF-8
 export EDITOR="nvim"
 export SUDO_EDITOR="$EDITOR"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
-export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/installs:$PATH"
-export ANTHROPIC_BASE_URL="https://aiplatform.dev51.cbf.dev.paypalinc.com/cosmosai/llm/v1"
-export ANTHROPIC_AUTH_TOKEN=dc4da242dcc2b50f4f94a75862409e0383c757717174698ac7603d29b8cc1375
-#
-# # PayPal Certificate Configuration
-# export REQUESTS_CA_BUNDLE="$HOME/Desktop/combined-certs.pem"
-# export SSL_CERT_FILE="$HOME/Desktop/combined-certs.pem"
-# export CURL_CA_BUNDLE="$HOME/Desktop/combined-certs.pem"
-#
-# # For Node.js
-# export NODE_EXTRA_CA_CERTS="$HOME/Downloads/paypal-cert-bundle.pem"
-#
-# append completions to fpath
+export PNPM_HOME="$HOME/Library/pnpm"
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+. ~/.asdf/plugins/golang/set-env.zsh
+
 fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
-# initialise completions with ZSH's compinit
-autoload -Uz compinit && compinit
+
+
+autoload -U compinit && compinit
+
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
 
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
