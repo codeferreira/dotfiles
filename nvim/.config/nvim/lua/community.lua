@@ -10,8 +10,11 @@ return {
   { import = "astrocommunity.recipes.ai" },
   { import = "astrocommunity.markdown-and-latex.glow-nvim" },
   { import = "astrocommunity.markdown-and-latex.peek-nvim" },
-  { import = "astrocommunity.completion.copilot-lua-cmp" },
-  { import = "astrocommunity.editing-support.copilotchat-nvim" },
+  {
+    "Exafunction/windsurf.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    config = function() require("codeium").setup({}) end,
+  },
   { import = "astrocommunity.editing-support.multicursors-nvim" },
   { import = "astrocommunity.editing-support.todo-comments-nvim" },
   { import = "astrocommunity.git.git-blame-nvim" },

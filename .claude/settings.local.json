@@ -2,7 +2,12 @@
   "permissions": {
     "allow": [
       "WebFetch(domain:github.com)",
-      "WebFetch(domain:arcolinux.com)"
+      "WebFetch(domain:arcolinux.com)",
+      "Bash(eza:*)",
+      "Bash(diff:*)",
+      "Bash(git:*)",
+      "Bash(stow:*)",
+      "Bash(python3:*)"
     ],
     "deny": [],
     "ask": []

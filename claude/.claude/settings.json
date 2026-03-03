@@ -1,6 +1,55 @@
 {
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$HOME/.claude/hooks/gsd-check-update.js\""
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$HOME/.claude/hooks/gsd-context-monitor.js\""
+          }
+        ]
+      }
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "node \"$HOME/.claude/hooks/gsd-statusline.js\""
+  },
+  "enabledPlugins": {
+    "claude-tools@claude-settings": true,
+    "general-dev@claude-settings": true,
+    "github-dev@claude-settings": true,
+    "playwright-tools@claude-settings": true,
+    "statusline-tools@claude-settings": true,
+    "mountaineering-skills@mountaineering-skills-marketplace": true,
+    "reflexion@context-engineering-kit": true,
+    "superpowers@superpowers-marketplace": true,
+    "taches-cc-resources@taches-cc-resources": true,
+    "ralph-loop@claude-plugins-official": true,
+    "next-task@agentsys": true,
+    "plugin-dev@claude-settings": true,
+    "fullstack-dev-skills@fullstack-dev-skills": true,
+    "expo-app-design@expo-plugins": true,
+    "expo-deployment@expo-plugins": true,
+    "upgrading-expo@expo-plugins": true
+  },
+  "alwaysThinkingEnabled": false,
   "permissions": {
-    "allow": [],
+    "allow": [
+      "Bash(npm view:*)",
+      "Bash(npx get-shit-done-cc:*)",
+      "WebFetch(domain:raw.githubusercontent.com)"
+    ],
     "deny": []
   },
   "env": {

@@ -10,6 +10,7 @@ $c\
 $rust\
 $golang\
 $nodejs\
+${custom.bun}\
 $php\
 $java\
 $kotlin\
@@ -141,6 +142,12 @@ format = '[[ $symbol( $version) ](fg:bg_dark bg:green)]($style)'
 symbol = ""
 style = "bg:magenta"
 format = '[[ $symbol( $context) ](fg:bg_dark bg:cyan)]($style)'
+
+[custom.bun]
+detect_files = ["bun.lockb", "package.json"]
+command = 'bun --version 2>&1 | sed -E "s/^bun[[:space:]]*//"'
+symbol = " "
+format = '[ $symbol ${output} ](fg:bg_dark bg:magenta_bright)'
 
 [line_break]
 disabled = false

@@ -211,12 +211,10 @@ When you need to analyze multiple aspects of a codebase:
 **Effective Task Bundling:**
 
 1. **Related Operations**: Group tasks that analyze the same domain
-
    - Example: All security-related checks in one batch
    - Example: All test-related operations together
 
 2. **Resource-Based Grouping**: Tasks that operate on similar resources
-
    - Example: All database-related code analysis
    - Example: All API endpoint discovery
 
@@ -508,3 +506,4 @@ Use extended thinking for complex tasks:
 - **EXECUTE** tasks deterministically when possible
 - **LEVERAGE** up to 10 concurrent sub-agents for maximum efficiency
 - **REMEMBER** the Task tool is your primary mechanism for achieving 5-10x performance gains
+- **ALWAYS** use context7 MCP for up-to-date library documentation
