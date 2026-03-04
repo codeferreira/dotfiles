@@ -14,6 +14,7 @@ fi
 source ~/.zsh_plugins.zsh
 
 # --- Theme & Prompt ---
+setopt PROMPT_SUBST
 # Defer starship for faster initial prompt
 if command -v starship &>/dev/null; then
   zsh-defer -c 'eval "$(starship init zsh)"'
@@ -33,8 +34,9 @@ alias tree="eza --tree --icons"
 alias cat="bat"
 alias help="tldr"
 alias du="dust"
-alias lg="lazygit"
-alias ld="lazydocker"
+alias lz="lazygit"
+alias lzd="lazydocker"
+alias cl="clear"
 alias config="cd ~/dotfiles"
 alias reload="source ~/.zshrc"
 alias vi="nvim"
@@ -56,7 +58,7 @@ fi
 
 # Zoxide (Better cd)
 if command -v zoxide &>/dev/null; then
-  eval "$(zoxide init zsh)"
+  eval "$(zoxide init --cmd cd zsh)"
 fi
 
 # Atuin (Better history)

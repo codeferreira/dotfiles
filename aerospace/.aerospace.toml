@@ -168,24 +168,34 @@ alt-shift-l = ['join-with right', 'mode main']
 
 
 [workspace-to-monitor-force-assignment]
-1 = 2
-2 = 2
-3 = 2
-4 = 2
-5 = 2
-6 = 1
-7 = 1
-8 = 1
-9 = 1
+1 = 'main'
+2 = 'main'
+3 = 'main'
+4 = 'main'
+5 = 'main'
+6 = 'secondary'
+7 = 'secondary'
+8 = 'secondary'
+9 = 'secondary'
 
 [[on-window-detected]]
 if.app-id = 'com.mitchellh.ghostty'
 run = "move-node-to-workspace 1"
 
+# Browsers (Arc, Zen, SigmaOS)
+[[on-window-detected]]
+if.app-id = 'company.thebrowser.Browser' # Arc
+run = 'move-node-to-workspace 4'
+
 [[on-window-detected]]
 if.app-id = 'app.zen-browser.zen'
 run = 'move-node-to-workspace 4'
 
+[[on-window-detected]]
+if.app-id = 'com.sigmaos.sigmaos.macos'
+run = 'move-node-to-workspace 4'
+
+# Slack
 [[on-window-detected]]
 if.app-id = 'com.tinyspeck.slackmacgap'
 run = 'move-node-to-workspace 7'

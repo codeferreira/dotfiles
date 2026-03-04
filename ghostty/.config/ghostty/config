@@ -12,7 +12,6 @@ background-opacity = 0.98
 selection-invert-fg-bg = true
 cursor-invert-fg-bg = true
 cursor-style = block
-cursor-blink = false
 
 # --- Window Decoration ---
 window-padding-x = 12
@@ -27,6 +26,7 @@ copy-on-select = clipboard
 confirm-close-surface = false
 
 # --- Keybindings ---
-keybind = super+equal=increase_font_size
-keybind = super+minus=decrease_font_size
-keybind = super+zero=reset_font_size
+keybind = super+equal:increase_font_size
+keybind = super+minus:decrease_font_size
+keybind = super+zero:reset_font_size
+

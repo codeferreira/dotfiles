@@ -23,20 +23,26 @@ fi
 echo "Linking dotfiles with stow..."
 cd "$(dirname "$0")"
 # Removed 'zellij' from the list
-for dir in zsh nvim ghostty starship atuin lazygit aerospace gitconfig mise tmux; do
+for dir in zsh nvim ghostty starship atuin lazygit aerospace gitconfig mise tmux claude; do
   stow --target="$HOME" "$dir" 2>/dev/null || stow --restow --target="$HOME" "$dir"
 done
 
 # 5. Set zsh as default shell
 if [[ "$SHELL" != "$(which zsh)" ]]; then
   echo "Setting zsh as default shell..."
-  chsh -s "$(which zsh)"
+  chsh -s "$(which zsh)" || echo "Warning: chsh failed. You may need to manually add $(which zsh) to /etc/shells."
 fi
 
 # 6. Install zsh plugins via antidote
-if [[ -f ~/.zsh_plugins.txt ]]; then
+if [[ -f zsh/.zsh_plugins.txt ]]; then
   echo "Installing zsh plugins..."
-  antidote bundle < ~/.zsh_plugins.txt > ~/.zsh_plugins.zsh
+  # Use zsh to source antidote and generate bundle
+  ANTIDOTE_SCRIPT="/opt/homebrew/opt/antidote/share/antidote/antidote.zsh"
+  if [[ -f "$ANTIDOTE_SCRIPT" ]]; then
+    zsh -c "source $ANTIDOTE_SCRIPT && antidote bundle < zsh/.zsh_plugins.txt > ~/.zsh_plugins.zsh"
+  else
+    echo "Warning: antidote not found at $ANTIDOTE_SCRIPT"
+  fi
 fi
 
 # 7. Install Neovim plugins headlessly
