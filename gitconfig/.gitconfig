@@ -1,7 +1,5 @@
-[user]
-	name = José Ferreira
-	email = dev.josejunior@gmail.com
-	signingkey =E97AB6F785584842
+[include]
+	path = ~/.gitconfig.local
 [color]
 	branch = auto
 	diff = auto
@@ -15,8 +13,17 @@
 	untracked = red
 [core]
 	autocrlf = input
-	pager = less -FRSX
+	pager = delta
 	excludesfile = ~/.gitignore
+
+[interactive]
+	diffFilter = delta --color-only
+
+[delta]
+	navigate = true
+	dark = true
+	syntax-theme = base16
+	line-numbers = true
 [alias]
 	ci = commit
   co = checkout

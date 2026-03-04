@@ -7,7 +7,19 @@
       "Bash(diff:*)",
       "Bash(git:*)",
       "Bash(stow:*)",
-      "Bash(python3:*)"
+      "Bash(python3:*)",
+      "WebSearch",
+      "WebFetch(domain:zellij.dev)",
+      "Bash(brew search:*)",
+      "Bash(brew info:*)",
+      "Bash(/opt/homebrew/bin/mise plugins:*)",
+      "Bash(brew list:*)",
+      "Bash(brew:*)",
+      "Bash(mise:*)",
+      "Bash(/opt/homebrew/opt/mise/bin/mise:*)",
+      "Bash(zellij:*)",
+      "Bash(curl:*)",
+      "Bash(file:*)"
     ],
     "deny": [],
     "ask": []
