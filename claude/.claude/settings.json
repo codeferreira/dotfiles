@@ -1,15 +1,5 @@
 {
   "hooks": {
-    "SessionStart": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "node \"$HOME/.claude/hooks/gsd-check-update.js\""
-          }
-        ]
-      }
-    ],
     "PostToolUse": [
       {
         "hooks": [
@@ -58,5 +48,6 @@
     "GIT_EDITOR": "nvim"
   },
   "cleanupPeriodDays": 90,
-  "includeCoAuthoredBy": false
+  "includeCoAuthoredBy": false,
+  "outputStyle": "concise"
 }

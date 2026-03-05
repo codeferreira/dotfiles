@@ -19,9 +19,18 @@ return {
     dependencies = { "Exafunction/windsurf.nvim" },
     opts = {
       sources = {
-        default = { "lsp", "path", "snippets", "buffer", "codeium" },
+        default = { "lsp", "path", "snippets", "buffer", "windsurf" },
         providers = {
-          codeium = { name = "Codeium", module = "codeium.blink", async = true },
+          windsurf = {
+            name = "Windsurf",
+            module = "codeium.blink",
+            async = true,
+            enabled = function()
+              return not vim.tbl_contains({ "oil" }, vim.bo.filetype)
+                and vim.bo.buftype ~= "prompt"
+                and vim.b.completion ~= false
+            end,
+          },
         },
       },
     },
