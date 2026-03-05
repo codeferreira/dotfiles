@@ -41,6 +41,9 @@ alias config="cd ~/dotfiles"
 alias reload="source ~/.zshrc"
 alias vi="nvim"
 alias v="nvim ."
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
 
 # Docker Aliases
 alias dco="docker compose"

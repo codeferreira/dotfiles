@@ -55,7 +55,7 @@ cask "claude"
 cask "claude-code"
 
 # Casks — productivity & macOS tools
-cask "aerospace"
+cask "nikitabobko/tap/aerospace"
 cask "raycast"
 cask "maccy"
 cask "shottr"

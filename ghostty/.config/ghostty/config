@@ -3,12 +3,12 @@ shell-integration-features = cursor,no-sudo,no-title
 clipboard-read = allow
 clipboard-write = allow
 font-size = 14
-font-family = "CaskaydiaCove Nerd Font"
+font-family = "CaskaydiaCove Nerd Font Mono"
 font-thicken = true
 
 # --- Theme & Colors ---
 theme = vague.conf
-background-opacity = 0.98
+background-opacity = 1
 selection-invert-fg-bg = true
 cursor-invert-fg-bg = true
 cursor-style = block
