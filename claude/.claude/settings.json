@@ -1,4 +1,19 @@
 {
+  "cleanupPeriodDays": 90,
+  "env": {
+    "CLAUDE_CODE_ENABLE_TELEMETRY": "0",
+    "EDITOR": "nvim",
+    "GIT_EDITOR": "nvim"
+  },
+  "includeCoAuthoredBy": false,
+  "permissions": {
+    "allow": [
+      "Bash(npm view:*)",
+      "Bash(npx get-shit-done-cc:*)",
+      "WebFetch(domain:raw.githubusercontent.com)"
+    ],
+    "deny": []
+  },
   "hooks": {
     "PostToolUse": [
       {
@@ -33,21 +48,6 @@
     "expo-deployment@expo-plugins": true,
     "upgrading-expo@expo-plugins": true
   },
-  "alwaysThinkingEnabled": false,
-  "permissions": {
-    "allow": [
-      "Bash(npm view:*)",
-      "Bash(npx get-shit-done-cc:*)",
-      "WebFetch(domain:raw.githubusercontent.com)"
-    ],
-    "deny": []
-  },
-  "env": {
-    "CLAUDE_CODE_ENABLE_TELEMETRY": "0",
-    "EDITOR": "nvim",
-    "GIT_EDITOR": "nvim"
-  },
-  "cleanupPeriodDays": 90,
-  "includeCoAuthoredBy": false,
-  "outputStyle": "concise"
+  "outputStyle": "concise",
+  "alwaysThinkingEnabled": false
 }
