@@ -23,7 +23,7 @@ fi
 echo "Linking dotfiles with stow..."
 cd "$(dirname "$0")"
 # Removed 'zellij' from the list
-for dir in zsh nvim ghostty starship atuin lazygit aerospace gitconfig mise tmux claude; do
+for dir in zsh nvim ghostty starship atuin lazygit aerospace gitconfig mise tmux claude codex; do
   stow --target="$HOME" "$dir" 2>/dev/null || stow --restow --target="$HOME" "$dir"
 done
 

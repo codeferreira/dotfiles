@@ -143,7 +143,8 @@ dotfiles/
 ├── gitconfig/          # .gitconfig (delta, aliases, gpg)
 ├── aerospace/          # window manager config
 ├── mise/               # runtime version manager
-└── claude/             # Claude Code config, skills, agents
+├── claude/             # Claude Code config, skills, agents
+└── codex/              # Codex config, skills, agents
 ```
 
 Each directory mirrors `$HOME` — stow creates symlinks directly.

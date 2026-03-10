@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(which superclaude:*)",
+      "Bash(rmdir ~/.superclaude/airis-mcp-gateway/mcp-config.json && echo '{}' > ~/.superclaude/airis-mcp-gateway/mcp-config.json && cat ~/.superclaude/airis-mcp-gateway/mcp-config.json)",
+      "Bash(sleep 3 && curl -s http://localhost:9400/health 2>&1)",
+      "Bash(claude mcp:*)",
+      "Bash(docker ps:*)"
+    ]
+  }
+}

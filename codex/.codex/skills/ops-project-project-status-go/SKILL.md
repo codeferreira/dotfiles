@@ -1,0 +1,107 @@
+---
+name: "ops-project-project-status-go"
+description: "Ultra-fast Go project health check using 8 parallel sub-agents for comprehensive analysis"
+metadata:
+  short-description: "Claude command port"
+---
+
+<codex_skill_adapter>
+## A. Skill Invocation
+- This skill is invoked by mentioning `$ops-project-project-status-go`.
+- Treat all user text after `$ops-project-project-status-go` as `{{SC_ARGS}}`.
+- If no arguments are present, treat `{{SC_ARGS}}` as empty.
+
+## B. Claude Command Translation
+- This skill is a Codex-native port of the Claude command tree and SuperClaude framework.
+- Translate Claude `spawn_agent(...)` patterns to Codex `spawn_agent(...)`.
+- Translate Claude planning/checklist language to Codex `update_plan`.
+- Prefer existing Codex MCP servers from `config.toml` when the original command mentions MCP.
+
+## C. Compatibility Notes
+- Original command: `ops:project:project-status-go`.
+- Codex invocation: `$ops-project-project-status-go`.
+- Preserve the behavioral intent of the source command, but use Codex-native tools and collaboration primitives.
+</codex_skill_adapter>
+
+## Context
+
+- Check mode: {{SC_ARGS}} (optional - quick or detailed, default: quick)
+
+## Your spawn_agent
+
+**IMMEDIATELY DEPLOY 8 PARALLEL GO PROJECT HEALTH AGENTS** for ultra-fast comprehensive project analysis: **${ARGUMENTS:-quick} mode**
+
+**CRITICAL**: Launch ALL agents simultaneously in first response - NO sequential processing.
+
+## Parallel Go Project Health Framework
+
+**NO SEQUENTIAL PROCESSING** - Deploy these specialized Go health analysis agents in parallel:
+
+1. **Build & Compilation Agent**: Go build status, compilation errors, race condition detection, build optimization analysis
+2. **Test Suite & Coverage Agent**: Test execution, coverage analysis, benchmark detection, test quality assessment
+3. **Code Quality & Vet Agent**: go vet analysis, code quality metrics, best practices validation, maintainability checks
+4. **Format & Standards Agent**: gofmt checking, code formatting consistency, style guide compliance
+5. **Dependencies & Security Agent**: Module analysis, dependency updates, vulnerability scanning with govulncheck
+6. **Static Analysis Agent**: staticcheck analysis, advanced linting, code smell detection, performance issues
+7. **Project Structure Agent**: File organization, package structure, ConnectRPC detection, architecture patterns
+8. **Performance & Metrics Agent**: Binary size analysis, benchmark detection, optimization opportunities, profiling readiness
+
+**Expected speedup**: 8x faster than sequential health checks.
+
+**IMMEDIATELY LAUNCH ALL 8 AGENTS:**
+
+**Agent 1: Build & Compilation Analysis**
+Analyze Go build health, compilation status, race condition detection, and build configuration. Check for build errors, missing dependencies, and compilation issues.
+
+**Agent 2: Test Suite & Coverage Analysis**
+Evaluate test execution, coverage metrics, benchmark detection, and test quality patterns. Identify missing tests, coverage gaps, and test performance.
+
+**Agent 3: Code Quality & Vet Analysis**
+Perform go vet analysis, identify code quality issues, best practice violations, and maintainability problems. Check for potential bugs and anti-patterns.
+
+**Agent 4: Format & Standards Analysis**
+Verify code formatting consistency with gofmt, style guide compliance, and formatting standards. Identify unformatted files and style inconsistencies.
+
+**Agent 5: Dependencies & Security Analysis**
+Analyze module dependencies, security vulnerabilities, outdated packages, and dependency management. Check for security issues with govulncheck.
+
+**Agent 6: Static Analysis Agent**
+Perform advanced static analysis with staticcheck, identify complex code issues, performance problems, and advanced linting violations.
+
+**Agent 7: Project Structure Analysis**
+Assess package organization, directory structure, ConnectRPC usage, architectural patterns, and Go project best practices. Identify structural issues.
+
+**Agent 8: Performance & Metrics Analysis**
+Analyze binary size, benchmark availability, performance optimization opportunities, and profiling readiness. Identify performance bottlenecks.
+
+**CRITICAL**: All agents execute simultaneously for maximum efficiency. Synthesis happens after all agents complete.
+
+Expected completion time: 8x faster than traditional sequential analysis.
+
+## Quick Reference
+
+### Usage Examples
+
+```bash
+# Quick health check (default)
+/project-status-go
+
+# Detailed analysis with all checks
+/project-status-go detailed
+
+# From a specific project directory
+cd my-go-project && /project-status-go
+```
+
+### Health Checks Performed
+
+1. **Build Health**: Compilation and race condition detection
+2. **Test Suite**: Test execution, coverage analysis
+3. **Code Quality**: go vet, gofmt, staticcheck
+4. **Module Health**: Tidiness, verification, updates
+5. **Security**: Vulnerability scanning with govulncheck
+6. **Project Structure**: Best practices and organization
+7. **Performance**: Benchmarks and concurrency analysis (detailed mode)
+8. **Static Analysis**: Advanced linting and code quality metrics
+
+This command provides comprehensive Go project health monitoring with a focus on best practices and security through parallel sub-agent analysis.
