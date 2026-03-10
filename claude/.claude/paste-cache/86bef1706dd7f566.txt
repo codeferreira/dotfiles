@@ -1,0 +1,56 @@
+ ~ cat /etc/nginx/sites-available/vendas-beta.conf
+# Nginx configuration for vendas-beta.lestetelecom.com.br (Next.js App with PM2)
+server {
+    listen 80;
+    listen [::]:80;
+    server_name vendas-beta.lestetelecom.com.br;
+
+    # Redirect all HTTP traffic to HTTPS
+    location / {
+        return 301 https://$host$request_uri;
+    }
+}
+
+server {
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
+    server_name vendas-beta.lestetelecom.com.br;
+
+    # SSL Certificate and Key
+    ssl_certificate /etc/ssl/lestetelecom.com.br.crt;
+    ssl_certificate_key /etc/ssl/lestetelecom.com.br.key;
+
+    # SSL settings for better security
+    ssl_session_cache shared:SSL:10m;
+    ssl_session_timeout 10m;
+    ssl_ciphers HIGH:!aNULL:!MD5;
+    ssl_prefer_server_ciphers on;
+
+    # Proxy requests to the PM2 process on port 3000
+    location / {
+        proxy_pass http://127.0.0.1:3000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+
+        # Optional WebSocket support for Next.js
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    # Increase client_max_body_size for uploads, if needed
+    client_max_body_size 50M;
+
+    # Error pages
+    error_page 404 /404.html;
+    location = /404.html {
+        root /usr/share/nginx/html;
+    }
+
+    error_page 500 502 503 504 /50x.html;
+    location = /50x.html {
+        root /usr/share/nginx/html;
+    }
+}

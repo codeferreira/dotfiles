@@ -66,7 +66,7 @@ fi
 
 # Atuin (Better history)
 if command -v atuin &>/dev/null; then
-  eval "$(atuin init zsh --disable-up-arrow)"
+  eval "$(atuin init zsh)"
 fi
 
 # --- Completion Settings ---
@@ -76,3 +76,5 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 
 # Finalize profiling
 # [[ $terminfo[kcuu1] == "" ]] && zprof
+ export PATH="$HOME/.local/bin:$PATH"
+ export PATH="/Users/ferreiracode/.bun/bin:$PATH"
