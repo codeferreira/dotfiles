@@ -1,6 +1,6 @@
 ---
 name: "sc-index-repo"
-description: "Repository Indexing - 94% token reduction (58K → 3K)"
+description: "Repository indexing for context optimization and token-efficient project navigation"
 metadata:
   short-description: "Claude command port"
 ---

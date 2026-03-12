@@ -40,8 +40,16 @@ Key behaviors:
 
 Here is a complete list of all available SuperClaude (`$sc`) commands.
 
+In this Codex port, SuperClaude-style MCP orchestration is centered on direct MCP servers plus native Codex tools. The preferred Codex execution model is:
+- native Codex tools for editing, shell, git, planning, and delegation
+- `context7` for official docs
+- `sequential-thinking` for structured reasoning
+- direct SuperClaude MCPs such as `serena`, `tavily`, `magic`, `morphllm-fast-apply`, and `chrome-devtools` when configured
+
 | Command | Description |
 |---|---|
+| `$sc` | Show this help and the available command set |
+| `$sc-agent` | SC Agent — session controller that orchestrates investigation, implementation, and review |
 | `$sc-analyze` | Comprehensive code analysis across quality, security, performance, and architecture domains |
 | `$sc-brainstorm` | Interactive requirements discovery through Socratic dialogue and systematic exploration |
 | `$sc-build` | Build, compile, and package projects with intelligent error handling and optimization |
@@ -56,8 +64,12 @@ Here is a complete list of all available SuperClaude (`$sc`) commands.
 | `$sc-implement` | Feature and code implementation with intelligent persona activation and MCP integration |
 | `$sc-improve` | Apply systematic improvements to code quality, performance, and maintainability |
 | `$sc-index` | Generate comprehensive project documentation and knowledge base with intelligent organization |
+| `$sc-index-repo` | Repository indexing for context optimization and token-efficient project navigation |
 | `$sc-load` | Session lifecycle management with Serena MCP integration for project context loading |
-| `$sc-reflect` | spawn_agent reflection and validation using Serena MCP analysis capabilities |
+| `$sc-pm` | Project Manager Agent - Default orchestration agent that coordinates all sub-agents and manages workflows seamlessly |
+| `$sc-recommend` | Ultra-intelligent command recommendation engine - recommends the most suitable SuperClaude commands for any user input |
+| `$sc-reflect` | Task reflection and validation using Serena MCP analysis capabilities |
+| `$sc-research` | Deep web research with adaptive planning and intelligent search |
 | `$sc-save` | Session lifecycle management with Serena MCP integration for session context persistence |
 | `$sc-select-tool` | Intelligent MCP tool selection based on complexity scoring and operation analysis |
 | `$sc-spawn` | Meta-system task orchestration with intelligent breakdown and delegation |

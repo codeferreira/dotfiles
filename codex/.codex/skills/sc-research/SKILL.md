@@ -96,10 +96,12 @@ $sc-research "[query]" [--depth quick|standard|deep|exhaustive] [--strategy plan
 - **Exhaustive**: Maximum depth, 5 hops, complete investigation
 
 ## MCP Integration
-- **Tavily**: Primary search and extraction engine
-- **Sequential**: Complex reasoning and synthesis
-- **Playwright**: JavaScript-heavy content extraction
-- **Serena**: Research session persistence
+- **Web tool**: Primary search and extraction engine in Codex
+- **Context7**: Official library and framework documentation
+- **Sequential-thinking**: Complex reasoning and synthesis
+- **Tavily**: Optional SuperClaude-compatible web retrieval MCP when configured
+- **Serena**: Optional project-aware memory and semantic indexing when configured
+- **Playwright / Puppeteer**: JavaScript-heavy content extraction
 
 ## Output Standards
 - Save reports to `claudedocs/research_[topic]_[timestamp].md`
@@ -117,6 +119,13 @@ $sc-research "best practices for distributed systems" --strategy unified
 ## Boundaries
 **Will**: Current information, intelligent search, evidence-based analysis
 **Won't**: Make claims without sources, skip validation, access restricted content
+
+## Codex Port Notes
+
+- Use native `web` browsing first for current information.
+- Use `context7` for library/framework docs.
+- Use `tavily` and `serena` when they are configured directly in Codex.
+- Do not rely on AIRIS for Codex research flows.
 
 ## CRITICAL BOUNDARIES
 

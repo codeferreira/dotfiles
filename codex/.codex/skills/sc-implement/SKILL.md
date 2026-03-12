@@ -48,21 +48,29 @@ $sc-implement [feature-description] [--type component|api|service|feature] [--fr
 
 Key behaviors:
 - Context-based persona activation (architect, frontend, backend, security, qa)
-- Framework-specific implementation via Context7 and Magic MCP integration
-- Systematic multi-component coordination via Sequential MCP
+- Framework-specific implementation via Context7 and Codex-native research tools
+- Systematic multi-component coordination via Sequential-thinking and Codex planning
 - Comprehensive testing integration with Playwright for validation
 
 ## MCP Integration
-- **Context7 MCP**: Framework patterns and official documentation for React, Vue, Angular, Express
-- **Magic MCP**: Auto-activated for UI component generation and design system integration
-- **Sequential MCP**: Complex multi-step analysis and implementation planning
-- **Playwright MCP**: Testing validation and quality assurance integration
+- **Context7**: Framework patterns and official documentation for React, Vue, Angular, Express
+- **Sequential-thinking**: Complex multi-step analysis and implementation planning
+- **Serena**: Semantic project understanding and code navigation when configured
+- **Magic**: UI generation support when configured
+- **Morphllm-fast-apply**: Bulk edit support when configured
+- **Playwright / Puppeteer**: Testing validation and quality assurance integration
 
 ## Tool Coordination
 - **Write/Edit/MultiEdit**: Code generation and modification for implementation
 - **Read/Grep/Glob**: Project analysis and pattern detection for consistency
 - **update_plan**: Progress tracking for complex multi-file implementations
 - **spawn_agent**: Delegation for large-scale feature development requiring systematic coordination
+
+## Codex Port Notes
+
+- Native Codex editing, shell, git, and planning tools are the default implementation path.
+- Use direct Codex MCPs such as `serena`, `magic`, and `morphllm-fast-apply` only when they are actually configured and healthy.
+- Do not rely on AIRIS as a required dependency for Codex implementation flows.
 
 ## Key Patterns
 - **Context Detection**: Framework/tech stack → appropriate persona and MCP activation

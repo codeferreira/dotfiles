@@ -1,6 +1,6 @@
 ---
 name: "sc-business-panel"
-description: "Codex port of sc:business-panel"
+description: "Multi-expert business analysis with adaptive interaction modes"
 metadata:
   short-description: "Claude command port"
 ---
